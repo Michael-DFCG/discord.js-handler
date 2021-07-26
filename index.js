@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 client.commands = new Discord.Collection();
+const { prefix, token } = require('./config.json');
 
 const commandFolders = fs.readdirSync('./comandi');
 
@@ -43,3 +44,4 @@ let comandonoesiste = new Discord.MessageEmbed()
 		message.reply(':x: errore: qualcosa non ha funzionato!\nquesto errore significa che qualcosa è andato storto. ', error);
 	}
 });
+client.login(token)
