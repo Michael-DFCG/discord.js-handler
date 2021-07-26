@@ -36,7 +36,7 @@ let comandonoesiste = new Discord.MessageEmbed()
 .setColor("RED")
 .setTimestamp()
 	if (!client.commands.has(command)) return message.channel.send(comandonoesiste)
-	try { //ok? si
+	try { 
 		client.commands.get(command).execute(message, args);
 	} catch (error) {
 		console.error(error);
